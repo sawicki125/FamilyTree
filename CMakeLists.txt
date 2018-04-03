@@ -3,5 +3,5 @@ project(FamilyTree)
 
 set(CMAKE_CXX_STANDARD 14)
 
-set(SOURCE_FILES main.cpp)
+set(SOURCE_FILES main.cpp FamilyTree.cpp FamilyTree.hpp)
 add_executable(FamilyTree ${SOURCE_FILES})
