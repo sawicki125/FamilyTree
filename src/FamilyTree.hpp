@@ -12,10 +12,10 @@
 template <typename T>
 class FamilyTree
 {
+public:
+    FamilyTree(T root) : root_(root){}
 private:
-    std::vector<std::shared_ptr<T>> siblings;
-    std::vector<std::shared_ptr<T>> kids;
-
+    T root_;
 };
 
 
