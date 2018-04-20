@@ -6,21 +6,23 @@
 #define FAMILYTREE_FAMILYMEMBER_HPP
 
 
-#include "FamilyMemberRoot.hpp"
+#include "IFamilyMember.hpp"
+#include "FamilyMemberWKids.hpp"
 #include <string>
 #include <vector>
 #include <memory>
 
-class FamilyMember : public FamilyMemberRoot
+class FamilyMember : public IFamilyMember
 {
 public:
-    explicit FamilyMember(const std::string &name) : name_(name){}
-private:
+    FamilyMember(std::shared_ptr<FamilyMember> F);
+    FamilyMember() = default;
+    bool isAlreadyInFamily();
+    bool addKid(std::shared_ptr<FamilyMember> kid);
     std::vector <std::shared_ptr<FamilyMember>> kids;
-    bool addKid(std::shared_ptr<FamilyMemberRoot> kid);
-    void addSibling(std::shared_ptr<FamilyMember> sibling);
+    std::shared_ptr<FamilyMember> spouse_;
+    std::shared_ptr<FamilyMemberWKids> parent_;
 
-    bool isAlreadyInFamily(std::shared_ptr<FamilyMemberRoot> shared_ptr);
 };
 
 

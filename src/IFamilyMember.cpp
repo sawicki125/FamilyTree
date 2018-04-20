@@ -2,4 +2,4 @@
 // Created by Michal Sawicki
 //
 
-#include "FamilyMemberRoot.hpp"
+#include "IFamilyMember.hpp"

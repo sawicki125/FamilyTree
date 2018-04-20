@@ -8,18 +8,15 @@
 #include <string>
 #include <memory>
 
-class FamilyMemberRoot
+class IFamilyMember
 {
 public:
-    void addSpouse (const std::shared_ptr<FamilyMemberRoot> &spouse)
-    {
-        *spouse_ = *spouse;
-    }
-
+    IFamilyMember() = default;
+    virtual bool addSibling() = 0;
+    virtual bool isAlreadyInFamily()  = 0;
     std::string name_;
     std::string lastName_;
     int age_;
-    std::shared_ptr<FamilyMemberRoot> spouse_;
 
 };
 

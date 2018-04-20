@@ -4,16 +4,17 @@
 
 #include "FamilyMember.hpp"
 
-bool FamilyMember::addKid(std::shared_ptr<FamilyMemberRoot> kid)
+
+
+bool FamilyMember::addKid(std::shared_ptr<FamilyMember> kid)
 {
     if(kids.empty())
     {
-        kids.emplace_back(kid);
     }
-    else if (isAlreadyInFamily(kid))
-    {
-        return false;
-    }
+//    else if (isAlreadyInFamily(*kid))
+//    {
+//        return false;
+//    }
     else
     {
         kids.emplace_back(kid);
@@ -21,13 +22,8 @@ bool FamilyMember::addKid(std::shared_ptr<FamilyMemberRoot> kid)
 
     return false;
 }
-
-bool FamilyMember::isAlreadyInFamily(std::shared_ptr<FamilyMemberRoot> kidToCheck)
-{
-    for (auto const &kid : kids)
-    {
-        if(kid == kidToCheck)
-            return true;
-    }
-    return false;
-}
+//
+//bool FamilyMember::isAlreadyInFamily( )
+//{
+//    return false;
+//}

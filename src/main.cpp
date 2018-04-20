@@ -4,7 +4,6 @@
 
 int main()
 {
-    FamilyMember M("Tomek");
-    FamilyTree<FamilyMember> T(M);
+
     return 0;
 }
